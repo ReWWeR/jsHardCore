@@ -109,7 +109,8 @@ AJAX('GET', 'http://54.72.3.96:3000/techtalks').then(function (data) {
 
             tableRows += "<tr><td><strong>" + item.title + "</strong></td><td>" + item.lector + "</td>" + "</td><td><a href='mailto:'" + lectorCard.email + "'>" + lectorCard.email + "</a></td></tr>";
             /*table.innerHTML = tableRows;*/
-            table.appendChild(tr).appendChild(td.innerHTML = item.title);
+            td.innerHTML = item.title
+            table.appendChild(tr).appendChild(td);
         })
 
     })
