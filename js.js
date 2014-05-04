@@ -44,6 +44,7 @@ AJAX('GET', 'http://54.72.3.96:3000/techtalks').then(function(data){
         for (var k in techTalks) {
             if (resultTechTalks[i] == techTalks[k].title) {
                 console.log(techTalks[k].lector);
+                return false;
             }
         }
     }
