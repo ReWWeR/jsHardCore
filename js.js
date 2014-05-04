@@ -105,7 +105,7 @@ AJAX('GET', 'http://54.72.3.96:3000/techtalks').then(function (data) {
             var lectorCard = JSON.parse(response);
 
             tableRows += "<tr><td><strong>" + item.title + "</strong></td><td>" + item.lector + "</td></tr>"
-            + "</td><td><a href='mailto:'" + lectorCard.email + "'></a>" + lectorCard.email + "</td></tr>"
+            /*+ "</td><td><a href='mailto:'" + lectorCard.email + "'></a>" + lectorCard.email + "</td></tr>"*/
         })
     })
     table.innerHTML = tableRows;
