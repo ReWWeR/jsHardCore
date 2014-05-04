@@ -29,6 +29,6 @@ AJAX('GET', 'http://54.72.3.96:3000/techtalks').then(function(data){
     var techTalks = JSON.parse(data);
 
     for (var i in techTalks) {
-        console.log(techTalks[i].lector);
+        console.log(techTalks[i].title);
     }
 });
