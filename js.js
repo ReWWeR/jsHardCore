@@ -44,7 +44,7 @@ var record = {
         "promises"
     ]
 };
-var techTalk = '5366826c64990a5911694b00 ';
+var techTalk = '536679bb64990a5911694af2';
 AJAX('DELETE', 'http://54.72.3.96:3000/techtalks/' + techTalk);
 
 var jsonRecord = JSON.stringify(record);
