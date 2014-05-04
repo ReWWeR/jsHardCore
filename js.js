@@ -25,4 +25,4 @@ function AJAX(type, url, contentType, sendData) {
     })
 }
 
-AJAX('GET', 'http://54.72.3.96:3000/techtalks');
+AJAX('GET', 'http://54.72.3.96:3000/techtalks', 'java');
