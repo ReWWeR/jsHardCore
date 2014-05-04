@@ -36,7 +36,7 @@ AJAX('GET', 'http://54.72.3.96:3000/techtalks').then(function(data){
         test[i][1] =  techTalks[i].title;
     }
 
-    console.log(test);
+    console.log(test[0][0]);
 
     for (var i in techTalks) {
         techTalksTitles[i] = techTalks[i].title;
