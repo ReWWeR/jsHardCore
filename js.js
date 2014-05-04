@@ -89,7 +89,7 @@ AJAX('GET', 'http://54.72.3.96:3000/techtalks').then(function(data){
     }
 
     for (var i = 0; i <= techTalksTitles.length; i++) {
-        if (techTalksTitles[i] != techTalksTitles[i + 1] && resultTechTalksTitles[i] != 'undefined'){
+        if (techTalksTitles[i] != techTalksTitles[i + 1]){
             resultTechTalks.push(techTalksTitles[i]);
         };
     };
