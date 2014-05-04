@@ -82,8 +82,8 @@ AJAX('GET', 'http://54.72.3.96:3000/techtalks').then(function (data) {
     var techTalksTitles = [];
     var resultTechTalks = [];
     var table = document.getElementById('table');
-    var tr = table.createElement('TR');
-    var td = tr.createElement('TD');
+    var tr = table.appendChild(document.createElement('tr'));
+    var td = tr.appendChild(document.createElement('td'));
     var aLink = td.createElement('A');
     var tableRows = '';
 
@@ -109,7 +109,7 @@ AJAX('GET', 'http://54.72.3.96:3000/techtalks').then(function (data) {
             td.innerHTML = item.title;
             tableRows += "<tr><td><strong>" + item.title + "</strong></td><td>" + item.lector + "</td>" + "</td><td><a href='mailto:'" + lectorCard.email + "'>" + lectorCard.email + "</a></td></tr>";
             /*table.innerHTML = tableRows;*/
-            table.appendChild(td);
+            document.appendChild(td);
         })
 
     })
