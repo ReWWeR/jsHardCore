@@ -51,7 +51,7 @@ var record = {
 
 var jsonRecord = JSON.stringify(record);
 
-AJAX('DELETE', 'http://54.72.3.96:3000/techtalks/53668b0464990a5911694b06');
+AJAX('DELETE', 'http://54.72.3.96:3000/techtalks/53668b0464990a5911694b07');
 
 /*AJAX ('POST', 'http://54.72.3.96:3000/techtalks', 'application/json', jsonRecord)
     .then(function(response){
