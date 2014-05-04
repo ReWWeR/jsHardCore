@@ -92,14 +92,10 @@ AJAX('GET', 'http://54.72.3.96:3000/techtalks').then(function(data){
         });
     }
     techTalks = sortJSON(techTalks,'title');
-    console.log(techTalks);
-    console.log(techTalks.length);
 
     for (var i = 0; i < techTalks.length; i++) {
-        console.log(techTalks[i].title, techTalks[i+1].title);
         if (techTalks[i].title != techTalks[i+1].title) {
             resultTechTalks.push(techTalks[i].title);
-            console.log('if');
         }
     }
     console.log('test');
@@ -118,10 +114,11 @@ AJAX('GET', 'http://54.72.3.96:3000/techtalks').then(function(data){
     };
 
     console.log(resultTechTalks);
-*/
+
 
     resultTechTalks.forEach(function(item){
         tableRows +='<tr><td><strong>'+ item +'</strong></td></tr>'
     })
     table.innerHTML = tableRows;
+ */
 });
