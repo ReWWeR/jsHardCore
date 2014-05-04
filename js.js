@@ -29,6 +29,14 @@ AJAX('GET', 'http://54.72.3.96:3000/techtalks').then(function(data){
     var techTalks = JSON.parse(data);
     var techTalksTitles = [];
     var resultTechTalks = [];
+    var test = [[],[]]
+
+    for (var i in techTalks) {
+        test[[i],[0]] =  techTalks[i].lector;
+        test[[i],[1]] =  techTalks[i].title;
+    }
+
+    console.log(test);
 
     for (var i in techTalks) {
         techTalksTitles[i] = techTalks[i].title;
@@ -38,14 +46,5 @@ AJAX('GET', 'http://54.72.3.96:3000/techtalks').then(function(data){
         if (techTalksTitles[i] != techTalksTitles[i + 1]){
             resultTechTalks.push(techTalksTitles[i]);
         };
-    }
-
-    for (var i = 0; i <= resultTechTalks.length; i++){
-        for (var k in techTalks) {
-            if (resultTechTalks[i] == techTalks[k].title) {
-                console.log(techTalks[k].lector);
-                return;
-            }
-        }
     }
 });
