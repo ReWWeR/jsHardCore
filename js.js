@@ -44,9 +44,11 @@ var record = {
         "promises"
     ]
 };
+var techTalk = '5366826c64990a5911694b00 ';
+AJAX('DELETE', 'http://54.72.3.96:3000/techtalks/' + techTalk);
 
 var jsonRecord = JSON.stringify(record);
-
+/*
 AJAX ('POST', 'http://54.72.3.96:3000/techtalks', 'application/json', jsonRecord)
     .then(function(response){
         var lastRecord = JSON.parse(response);
@@ -66,7 +68,7 @@ AJAX ('POST', 'http://54.72.3.96:3000/techtalks', 'application/json', jsonRecord
         console.log ('DELETE: ', techtalk);
         console.log('ID: ' + techTalk)
     })
-/*    .then(function(techTalk){
+   .then(function(techTalk){
         var updatedString = JSON.stringify({'lector':'vasily_pupkin'});
 
         AJAX('PUT', 'http://54.72.3.96:3000/techtalks/' + techTalk, '', updatedString).then(function(response){
