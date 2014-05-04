@@ -99,7 +99,7 @@ AJAX('GET', 'http://54.72.3.96:3000/techtalks').then(function(data){
     console.log(resultTechTalks);
 
     resultTechTalks.forEach(function(item){
-        tableRows +='<tr><td>'+ item +'</td></tr>'
+        tableRows +='<tr><td><strong>'+ item +'</strong></td></tr>'
     })
     table.innerHTML = tableRows;
 });
