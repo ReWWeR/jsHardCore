@@ -65,6 +65,11 @@ AJAX ('POST', 'http://54.72.3.96:3000/techtalks', 'application/json', jsonRecord
         AJAX('PUT', 'http://54.72.3.96:3000/techtalks/' + techTalk, 'application/json', updatedString).then(function(response){
             console.log('UPDATE STRING LECTOR: ', updatedString);
         })
+        return techTalk;
+    })
+    .then(function(techtalk){
+        AJAX('DELETE', 'http://54.72.3.96:3000/techtalks/' + techTalk);
+        console.log ('DELETE: ', techtalk);
     })
 
 AJAX('GET', 'http://54.72.3.96:3000/techtalks').then(function(data){
