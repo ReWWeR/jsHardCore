@@ -28,22 +28,23 @@ function AJAX(type, url, contentType, sendData) {
 AJAX('GET', 'http://54.72.3.96:3000/techtalks').then(function(data){
     var techTalks = JSON.parse(data);
     var techTalksTitles = [];
+    var resultTechTalks = [];
 
     for (var i in techTalks) {
         techTalksTitles[i] = techTalks[i].title;
     }
 
-    techTalksTitles = techTalksTitles.sort();
-
-    var resultTechTalks = [[],[]];
-
     for (var i = 0; i <= techTalksTitles.length; i++) {
         if (techTalksTitles[i] != techTalksTitles[i + 1]){
-            resultTechTalks.push(techTalksTitles[[i],[]]);
+            resultTechTalks.push(techTalksTitles[i]);
         };
     }
 
-    console.log(resultTechTalks)
-
-
+    for (var i = 0; i <= resultTechTalks.length; i++){
+        for (var k in techTalks) {
+            if (resultTechTalks[i] == techTalks[j]) {
+                console.log(techTalks[j].lector);
+            }
+        }
+    }
 });
