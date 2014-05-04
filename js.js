@@ -21,6 +21,10 @@ function AJAX(type, url, contentType, sendData) {
             xhr.setRequestHeader('Content-Type', contentType);
         }
 
+        if (type == 'PUT') {
+            console.log('PUT');
+        }
+
         xhr.send(sendData);
     })
 }
@@ -44,8 +48,9 @@ var record = {
         "promises"
     ]
 };
-var techTalk = '536679bb64990a5911694af2';
-AJAX('DELETE', 'http://54.72.3.96:3000/techtalks/' + techTalk);
+var techTalk = '5366830c64990a5911694b01';
+var updatedString = JSON.stringify({"lector":[ "alena_karaba"]});
+AJAX('PUT', 'http://54.72.3.96:3000/techtalks/' + techTalk,'', updatedString);
 
 var jsonRecord = JSON.stringify(record);
 /*
