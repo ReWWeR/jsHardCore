@@ -25,18 +25,39 @@ function AJAX(type, url, contentType, sendData) {
     })
 }
 
+var record = {
+    "date": "4\/21\/2014",
+    "title": "AJAX",
+    "lector": [
+        "alena_karaba"
+    ],
+    "location": "K1\/3",
+    "description": "some description",
+    "level": "D1-D5",
+    "notes": "this is my brand new talk1",
+    "attendees": [
+        "alena_karaba"
+    ],
+    "tags": [
+        "ajax",
+        "xmlhttprequest",
+        "promises"
+    ]
+};
+
+var jsonRecord = JSON.stringify(record);
+
+AJAX ('POST', 'http://54.72.3.96:3000/techtalks', 'application/json', jsonRecord)
+    .then(function(response){
+        var lastRecord = JSON.parse(response);
+        console.log(lastRecord);
+        return lastRecord['_id'];
+    })
+
 AJAX('GET', 'http://54.72.3.96:3000/techtalks').then(function(data){
     var techTalks = JSON.parse(data);
     var techTalksTitles = [];
     var resultTechTalks = [];
-    var test = [[],[]]
-
-    for (var i in techTalks) {
-        test[i][0] =  techTalks[i].lector;
-        test[i][1] =  techTalks[i].title;
-    }
-
-    console.log(test[0][0]);
 
     for (var i in techTalks) {
         techTalksTitles[i] = techTalks[i].title;
