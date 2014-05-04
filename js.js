@@ -8,7 +8,7 @@ function AJAX(type, url, contentType, sendData) {
             if (xhr.status == 200) {
                 resolve(xhr.response);
             } else {
-                reject(Error(request.statusText));
+                reject(Error(xhr.statusText));
             }
         }
 
