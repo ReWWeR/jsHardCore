@@ -80,7 +80,7 @@ var jsonRecord = JSON.stringify(record);
 AJAX('GET', 'http://54.72.3.96:3000/techtalks').then(function (data) {
     var techTalks = JSON.parse(data);
     var techTalksTitles = [];
-    var resultTechTalks2 = [];
+    var resultTechTalks = [];
     var table = document.getElementById('table');
     var tableRows = '';
 
@@ -96,11 +96,15 @@ AJAX('GET', 'http://54.72.3.96:3000/techtalks').then(function (data) {
 
     for (var i = 0; i < techTalks.length - 1; i++) {
         if (techTalks[i].title != techTalks[i + 1].title) {
-            resultTechTalks2.push(techTalks[i]);
+            resultTechTalks.push(techTalks[i]);
         }
     }
-    console.log('123');
-    console.log(resultTechTalks2);
+
+    resultTechTalks.forEach(function(item){
+        tableRows +='<tr><td><strong>' + item.title + '</strong></td><td>' + item.lector + '</td></tr>'
+    })
+    table.innerHTML = tableRows;
+
     /*
      for (var i in techTalks) {
      techTalksTitles[i] = techTalks[i].title;
