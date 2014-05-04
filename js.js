@@ -51,7 +51,11 @@ var record = {
 
 var jsonRecord = JSON.stringify(record);
 
-AJAX ('POST', 'http://54.72.3.96:3000/techtalks', 'application/json', jsonRecord)
+AJAX('DELETE', 'http://54.72.3.96:3000/techtalks/53668abe64990a5911694b05');
+AJAX('DELETE', 'http://54.72.3.96:3000/techtalks/53668abe64990a5911694b06');
+AJAX('DELETE', 'http://54.72.3.96:3000/techtalks/53668abe64990a5911694b07');
+
+/*AJAX ('POST', 'http://54.72.3.96:3000/techtalks', 'application/json', jsonRecord)
     .then(function(response){
         var lastRecord = JSON.parse(response);
         console.log('ADD NEW RECORD...');
@@ -79,7 +83,7 @@ AJAX ('POST', 'http://54.72.3.96:3000/techtalks', 'application/json', jsonRecord
         console.log ('DELETE: ', techtalk);
         console.log('ID: ' + techTalk);
         return techTalk;
-    })
+    })*/
 /*
 AJAX('GET', 'http://54.72.3.96:3000/techtalks').then(function(data){
     var techTalks = JSON.parse(data);
