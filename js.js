@@ -17,7 +17,7 @@ function AJAX(type, url, contentType, sendData) {
         }
 
         if (contentType) {
-            console.log('contentType');
+            console.log(contentType);
             xhr.setRequestHeader('Content-Type', contentType);
         }
 
