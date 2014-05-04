@@ -21,10 +21,6 @@ function AJAX(type, url, contentType, sendData) {
             xhr.setRequestHeader('Content-Type', contentType);
         }
 
-        if (type == 'PUT') {
-            console.log('PUT');
-        }
-
         xhr.send(sendData);
     })
 }
@@ -50,8 +46,6 @@ var record = {
 };
 
 var jsonRecord = JSON.stringify(record);
-
-AJAX('DELETE', 'http://54.72.3.96:3000/techtalks/53668b0464990a5911694b07');
 
 /*AJAX ('POST', 'http://54.72.3.96:3000/techtalks', 'application/json', jsonRecord)
     .then(function(response){
@@ -82,7 +76,7 @@ AJAX('DELETE', 'http://54.72.3.96:3000/techtalks/53668b0464990a5911694b07');
         console.log('ID: ' + techTalk);
         return techTalk;
     })*/
-/*
+
 AJAX('GET', 'http://54.72.3.96:3000/techtalks').then(function(data){
     var techTalks = JSON.parse(data);
     var techTalksTitles = [];
@@ -98,4 +92,3 @@ AJAX('GET', 'http://54.72.3.96:3000/techtalks').then(function(data){
         };
     }
 });
- */
