@@ -98,8 +98,8 @@ AJAX('GET', 'http://54.72.3.96:3000/techtalks').then(function(data){
 
     console.log(resultTechTalks);
 
-    resultTechTalks.forEach(function(index){
-        tableRows +='<tr><td>'+ resultTechTalks[index] +'</td></tr>'
+    resultTechTalks.forEach(function(item){
+        tableRows +='<tr><td>'+ item +'</td></tr>'
     })
     table.innerHTML = tableRows;
 });
