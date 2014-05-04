@@ -48,12 +48,9 @@ var record = {
         "promises"
     ]
 };
-var techTalk = '5366780d64990a5911694aee';
-var updatedString = "'lector':['a_karaba']";
-AJAX('PUT', 'http://54.72.3.96:3000/techtalks/' + techTalk, '',updatedString);
 
 var jsonRecord = JSON.stringify(record);
-/*
+
 AJAX ('POST', 'http://54.72.3.96:3000/techtalks', 'application/json', jsonRecord)
     .then(function(response){
         var lastRecord = JSON.parse(response);
@@ -69,19 +66,12 @@ AJAX ('POST', 'http://54.72.3.96:3000/techtalks', 'application/json', jsonRecord
         return techTalk;
     })
     .then(function(techtalk){
+        console.log ('DELETE: ', techtalk);
+        console.log('ID: ' + techTalk)
         AJAX('DELETE', 'http://54.72.3.96:3000/techtalks/' + techTalk);
         console.log ('DELETE: ', techtalk);
         console.log('ID: ' + techTalk)
     })
-   .then(function(techTalk){
-        var updatedString = JSON.stringify({'lector':'vasily_pupkin'});
-
-        AJAX('PUT', 'http://54.72.3.96:3000/techtalks/' + techTalk, '', updatedString).then(function(response){
-            console.log('UPDATE STRING LECTOR: ', updatedString);
-            console.log('ID: ' + techTalk)
-        })
-        return techTalk;
-    })*/
 /*
 AJAX('GET', 'http://54.72.3.96:3000/techtalks').then(function(data){
     var techTalks = JSON.parse(data);
