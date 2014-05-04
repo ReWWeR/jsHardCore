@@ -54,7 +54,7 @@ AJAX ('POST', 'http://54.72.3.96:3000/techtalks', 'application/json', jsonRecord
         return lastRecord['_id'];
     })
     .then(function(techTalk){
-        AJAX('GET', 'http://54.72.3.96:3000/techtalks/' + techTalk, '').then(function(response){
+        AJAX('GET', 'http://54.72.3.96:3000/techtalks/' + techTalk).then(function(response){
             console.log('READ: ', response);
         })
         return techTalk;
@@ -62,7 +62,7 @@ AJAX ('POST', 'http://54.72.3.96:3000/techtalks', 'application/json', jsonRecord
     .then(function(techTalk){
         var updatedString = JSON.stringify({'lector':'vasily_pupkin'});
 
-        AJAX('PUT', 'http://54.72.3.96:3000/techtalks/' + techTalk, 'application/json', updatedString).then(function(response){
+        AJAX('PUT', 'http://54.72.3.96:3000/techtalks/' + techTalk, '', updatedString).then(function(response){
             console.log('UPDATE STRING LECTOR: ', updatedString);
         })
         return techTalk;
