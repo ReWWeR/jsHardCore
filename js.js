@@ -98,10 +98,7 @@ AJAX('GET', 'http://54.72.3.96:3000/techtalks').then(function(data){
             resultTechTalks.push(techTalks[i].title);
         }
     };
-    alert('123');
-    console.log('test');
     console.log(resultTechTalks);
-    alert('123');
 /*
     for (var i in techTalks) {
         techTalksTitles[i] = techTalks[i].title;
