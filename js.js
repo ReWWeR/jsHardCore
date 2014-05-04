@@ -81,6 +81,8 @@ AJAX('GET', 'http://54.72.3.96:3000/techtalks').then(function(data){
     var techTalks = JSON.parse(data);
     var techTalksTitles = [];
     var resultTechTalks = [];
+    var table = body.getElementById('table');
+    var tableRows = '';
 
     for (var i in techTalks) {
         techTalksTitles[i] = techTalks[i].title;
@@ -90,5 +92,10 @@ AJAX('GET', 'http://54.72.3.96:3000/techtalks').then(function(data){
         if (techTalksTitles[i] != techTalksTitles[i + 1]){
             resultTechTalks.push(techTalksTitles[i]);
         };
-    }
+    };
+
+    resultTechTalks.forEach(function(index){
+        tableRows +='<tr><td>'+ resultTechTalks[index] +'</td></tr>'
+    })
+    table.innerHTML(tableRows);
 });
