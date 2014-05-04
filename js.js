@@ -50,7 +50,7 @@ var record = {
 };
 var techTalk = '5366830c64990a5911694b01';
 var updatedString = JSON.stringify({"lector":[ "alena_karaba"]});
-AJAX('PUT', 'http://54.72.3.96:3000/techtalks/' + techTalk,'', updatedString);
+AJAX('DELETE', 'http://54.72.3.96:3000/techtalks/' + techTalk);
 
 var jsonRecord = JSON.stringify(record);
 /*
