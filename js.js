@@ -93,11 +93,11 @@ AJAX('GET', 'http://54.72.3.96:3000/techtalks').then(function(data){
     }
     techTalks = sortJSON(techTalks,'title');
 
-/*    for (var i = 0; i < techTalks.length; i++) {
+    for (var i = 0; i < techTalks.length; i++) {
         if (techTalks[i].title != techTalks[i+1].title) {
             resultTechTalks.push(techTalks[i].title);
         }
-    }*/
+    };
     alert('123');
     console.log('test');
     console.log(resultTechTalks);
