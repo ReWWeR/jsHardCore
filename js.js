@@ -49,7 +49,7 @@ var record = {
     ]
 };
 var techTalk = '5366780d64990a5911694aee';
-var updatedString = JSON.stringify({"lector":[ "a_karaba"]});
+var updatedString = "'lector':['a_karaba']";
 AJAX('PUT', 'http://54.72.3.96:3000/techtalks/' + techTalk, '',updatedString);
 
 var jsonRecord = JSON.stringify(record);
