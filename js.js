@@ -106,11 +106,10 @@ AJAX('GET', 'http://54.72.3.96:3000/techtalks').then(function (data) {
     resultTechTalks.forEach(function (item) {
         AJAX('GET', 'http://54.72.3.96:3000/attendees/' + item.lector).then(function (response) {
             var lectorCard = JSON.parse(response);
-
+            var tdTitle = td.innerHTML = item.title;
             tableRows += "<tr><td><strong>" + item.title + "</strong></td><td>" + item.lector + "</td>" + "</td><td><a href='mailto:'" + lectorCard.email + "'>" + lectorCard.email + "</a></td></tr>";
             /*table.innerHTML = tableRows;*/
-            td.innerHTML = item.title
-            table.appendChild(tr).appendChild(td);
+            table.appendChild(tr).appendChild(tdTitle);
         })
 
     })
