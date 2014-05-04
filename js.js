@@ -46,10 +46,8 @@ var record = {
 };
 
 var jsonRecord = JSON.stringify(record);
-var updatedString = JSON.stringify({'lector':'vasily_pupkin'});
-    AJAX('PUT', 'http://54.72.3.96:3000/techtalks/536679bb64990a5911694af2','',updatedString);
 
-/*AJAX ('POST', 'http://54.72.3.96:3000/techtalks', 'application/json', jsonRecord)
+AJAX ('POST', 'http://54.72.3.96:3000/techtalks', 'application/json', jsonRecord)
     .then(function(response){
         var lastRecord = JSON.parse(response);
         console.log('ADD NEW RECORD...');
@@ -63,7 +61,12 @@ var updatedString = JSON.stringify({'lector':'vasily_pupkin'});
         })
         return techTalk;
     })
-    .then(function(techTalk){
+    .then(function(techtalk){
+        AJAX('DELETE', 'http://54.72.3.96:3000/techtalks/' + techTalk);
+        console.log ('DELETE: ', techtalk);
+        console.log('ID: ' + techTalk)
+    })
+/*    .then(function(techTalk){
         var updatedString = JSON.stringify({'lector':'vasily_pupkin'});
 
         AJAX('PUT', 'http://54.72.3.96:3000/techtalks/' + techTalk, '', updatedString).then(function(response){
@@ -71,13 +74,8 @@ var updatedString = JSON.stringify({'lector':'vasily_pupkin'});
             console.log('ID: ' + techTalk)
         })
         return techTalk;
-    })
-    .then(function(techtalk){
-        AJAX('DELETE', 'http://54.72.3.96:3000/techtalks/' + techTalk);
-        console.log ('DELETE: ', techtalk);
-        console.log('ID: ' + techTalk)
-    })
-
+    })*/
+/*
 AJAX('GET', 'http://54.72.3.96:3000/techtalks').then(function(data){
     var techTalks = JSON.parse(data);
     var techTalksTitles = [];
