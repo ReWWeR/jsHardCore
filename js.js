@@ -82,9 +82,9 @@ AJAX('GET', 'http://54.72.3.96:3000/techtalks').then(function (data) {
     var techTalksTitles = [];
     var resultTechTalks = [];
     var table = document.getElementById('table');
-    var tr = table.createElement('TR');
-    var td = table.createElement('TD');
-    var a = table.createElement('A');
+    var tr = document.createElement('TR');
+    var td = document.createElement('TD');
+    var a = document.createElement('A');
     var tableRows = '';
 
     function sortJSON(array, key) {
