@@ -48,9 +48,9 @@ var record = {
         "promises"
     ]
 };
-var techTalk = '5366830c64990a5911694b01';
+var techTalk = '5366798e64990a5911694af1';
 var updatedString = JSON.stringify({"lector":[ "alena_karaba"]});
-AJAX('DELETE', 'http://54.72.3.96:3000/techtalks/' + techTalk);
+AJAX('DELETE', 'http://54.72.3.96:3000/techtalks/' + techTalk, '',updatedString);
 
 var jsonRecord = JSON.stringify(record);
 /*
