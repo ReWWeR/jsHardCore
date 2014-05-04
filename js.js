@@ -81,7 +81,7 @@ AJAX('GET', 'http://54.72.3.96:3000/techtalks').then(function(data){
     var techTalks = JSON.parse(data);
     var techTalksTitles = [];
     var resultTechTalks = [];
-    var table = body.getElementById('table');
+    var table = document.getElementById('table');
     var tableRows = '';
 
     for (var i in techTalks) {
