@@ -26,7 +26,7 @@ function AJAX(type, url, contentType, sendData) {
 }
 
 var record = {
-    "date": "4\/21\/2014",
+    "date": "04\/05\/2014",
     "title": "AJAX",
     "lector": [
         "alena_karaba"
@@ -34,7 +34,7 @@ var record = {
     "location": "K1\/3",
     "description": "some description",
     "level": "D1-D5",
-    "notes": "this is my brand new talk1",
+    "notes": "this is my brand new talk",
     "attendees": [
         "alena_karaba"
     ],
@@ -52,6 +52,11 @@ AJAX ('POST', 'http://54.72.3.96:3000/techtalks', 'application/json', jsonRecord
         var lastRecord = JSON.parse(response);
         console.log(lastRecord);
         return lastRecord['_id'];
+    })
+    .then(function(techTalk){
+        AJAX('GET', 'http://54.72.3.96:3000/techtalks/' + techTalk).then(function(response){
+            console.log('READ: ', response);
+        })
     })
 
 AJAX('GET', 'http://54.72.3.96:3000/techtalks').then(function(data){
