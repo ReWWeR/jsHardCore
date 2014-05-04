@@ -46,12 +46,9 @@ var record = {
 };
 
 var jsonRecord = JSON.stringify(record);
+var updatedString = JSON.stringify({'lector':'vasily_pupkin'});
+    AJAX('PUT', 'http://54.72.3.96:3000/techtalks/536679bb64990a5911694af2','',updatedString);
 
-    AJAX('DELETE', 'http://54.72.3.96:3000/techtalks/53667eeb64990a5911694afd');
-AJAX('DELETE', 'http://54.72.3.96:3000/techtalks/53667e4f64990a5911694afc');
-AJAX('DELETE', 'http://54.72.3.96:3000/techtalks/53667dc164990a5911694afb');
-AJAX('DELETE', 'http://54.72.3.96:3000/techtalks/536679d864990a5911694af4');
-AJAX('DELETE', 'http://54.72.3.96:3000/techtalks/536679d664990a5911694af3');
 /*AJAX ('POST', 'http://54.72.3.96:3000/techtalks', 'application/json', jsonRecord)
     .then(function(response){
         var lastRecord = JSON.parse(response);
