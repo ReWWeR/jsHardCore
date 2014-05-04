@@ -35,12 +35,13 @@ AJAX('GET', 'http://54.72.3.96:3000/techtalks').then(function(data){
 
     techTalksTitles = techTalksTitles.sort();
 
-    var resultTechTalks = [];
+    var resultTechTalks = [[],[]];
 
     for (var i = 0; i <= techTalksTitles.length; i++) {
         if (techTalksTitles[i] != techTalksTitles[i + 1]){
-            resultTechTalks.push(techTalksTitles[i]);
+            resultTechTalks.push(techTalksTitles[[i],[]]);
         };
     }
-    console.log(resultTechTalks);
+
+
 });
