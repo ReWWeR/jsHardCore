@@ -82,9 +82,9 @@ AJAX('GET', 'http://54.72.3.96:3000/techtalks').then(function (data) {
     var techTalksTitles = [];
     var resultTechTalks = [];
     var table = document.getElementById('table');
-    var tr = document.createElement('TR');
-    var td = document.createElement('TD');
-    var aLink = document.createElement('A');
+    var tr = table.createElement('TR');
+    var td = tr.createElement('TD');
+    var aLink = td.createElement('A');
     var tableRows = '';
 
     function sortJSON(array, key) {
@@ -106,10 +106,10 @@ AJAX('GET', 'http://54.72.3.96:3000/techtalks').then(function (data) {
     resultTechTalks.forEach(function (item) {
         AJAX('GET', 'http://54.72.3.96:3000/attendees/' + item.lector).then(function (response) {
             var lectorCard = JSON.parse(response);
-            var tdTitle = td.innerHTML = item.title;
+            td.innerHTML = item.title;
             tableRows += "<tr><td><strong>" + item.title + "</strong></td><td>" + item.lector + "</td>" + "</td><td><a href='mailto:'" + lectorCard.email + "'>" + lectorCard.email + "</a></td></tr>";
             /*table.innerHTML = tableRows;*/
-            table.appendChild(tr).appendChild(tdTitle);
+            table.appendChild(td);
         })
 
     })
