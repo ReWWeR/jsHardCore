@@ -108,7 +108,7 @@ AJAX('GET', 'http://54.72.3.96:3000/techtalks').then(function (data) {
             var lectorCard = JSON.parse(response);
             tableRows += "<tr><td><strong>" + item.title + "</strong></td><td>" + item.lector + "</td>" + "</td><td><a href='mailto:'" + lectorCard.email + "'>" + lectorCard.email + "</a></td></tr>";
             /*table.innerHTML = tableRows;*/
-            document.appendChild(td.innerHTML = item.title);
+            document.appendChild(td.innerHTML = item.title).insertBefore(td.innerHTML = item.lector).insertBefore(aLink.href = lectorCard.email);
         })
 
     })
