@@ -50,12 +50,20 @@ var jsonRecord = JSON.stringify(record);
 AJAX ('POST', 'http://54.72.3.96:3000/techtalks', 'application/json', jsonRecord)
     .then(function(response){
         var lastRecord = JSON.parse(response);
-        console.log(lastRecord);
+        console.log('ADD NEW RECORD...');
         return lastRecord['_id'];
     })
     .then(function(techTalk){
         AJAX('GET', 'http://54.72.3.96:3000/techtalks/' + techTalk).then(function(response){
             console.log('READ: ', response);
+        })
+        return techTalk;
+    })
+    .then(function(techTalk){
+        var updatedString = JSON.stringify({'lector':'vasily_pupkin'});
+
+        AJAX('POST', 'http://54.72.3.96:3000/techtalks' + techTalk, 'application/json', updatedString).then(function(response){
+            console.log('UPDATE STRING LECTOR: ', updatedString);
         })
     })
 
