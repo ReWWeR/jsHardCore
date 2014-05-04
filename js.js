@@ -51,11 +51,13 @@ AJAX ('POST', 'http://54.72.3.96:3000/techtalks', 'application/json', jsonRecord
     .then(function(response){
         var lastRecord = JSON.parse(response);
         console.log('ADD NEW RECORD...');
+        console.log('ID: ' + lastRecord['_id']);
         return lastRecord['_id'];
     })
     .then(function(techTalk){
         AJAX('GET', 'http://54.72.3.96:3000/techtalks/' + techTalk).then(function(response){
             console.log('READ: ', response);
+            console.log('ID: ' + techTalk)
         })
         return techTalk;
     })
@@ -64,12 +66,14 @@ AJAX ('POST', 'http://54.72.3.96:3000/techtalks', 'application/json', jsonRecord
 
         AJAX('PUT', 'http://54.72.3.96:3000/techtalks/' + techTalk, '', updatedString).then(function(response){
             console.log('UPDATE STRING LECTOR: ', updatedString);
+            console.log('ID: ' + techTalk)
         })
         return techTalk;
     })
     .then(function(techtalk){
         AJAX('DELETE', 'http://54.72.3.96:3000/techtalks/' + techTalk);
         console.log ('DELETE: ', techtalk);
+        console.log('ID: ' + techTalk)
     })
 
 AJAX('GET', 'http://54.72.3.96:3000/techtalks').then(function(data){
