@@ -42,7 +42,7 @@ AJAX('GET', 'http://54.72.3.96:3000/techtalks').then(function(data){
 
     for (var i = 0; i <= resultTechTalks.length; i++){
         for (var k in techTalks) {
-            if (resultTechTalks[i] == techTalks[k]) {
+            if (resultTechTalks[i] == techTalks[k].title) {
                 console.log(techTalks[k].lector);
             }
         }
