@@ -17,7 +17,6 @@ function AJAX(type, url, contentType, sendData) {
         }
 
         if (contentType) {
-            console.log(contentType);
             xhr.setRequestHeader('Content-Type', contentType);
         }
 
@@ -53,7 +52,6 @@ AJAX('POST', 'http://54.72.3.96:3000/techtalks', 'application/json', jsonRecord)
     .then(function (response) {
         var lastRecord = JSON.parse(response);
         console.log('ADD NEW RECORD...');
-        console.log('ID: ' + lastRecord['_id']);
         return lastRecord['_id'];
     })
     .then(function (techTalk) {
@@ -68,14 +66,12 @@ AJAX('POST', 'http://54.72.3.96:3000/techtalks', 'application/json', jsonRecord)
 
         AJAX('PUT', 'http://54.72.3.96:3000/techtalks/' + techTalk, 'application/json', updatedString).then(function (response) {
             console.log('UPDATE STRING LECTOR: ', response);
-            console.log('ID: ' + techTalk)
         })
         return techTalk;
     })
     .then(function (techTalk) {
         AJAX('DELETE', 'http://54.72.3.96:3000/techtalks/' + techTalk);
         console.log('DELETE: ', techTalk);
-        console.log('ID: ' + techTalk);
         return techTalk;
     })
 
