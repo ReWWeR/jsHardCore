@@ -67,7 +67,7 @@ AJAX('POST', 'http://54.72.3.96:3000/techtalks', 'application/json', jsonRecord)
         var updatedString = JSON.stringify({'lector': 'vasily_pupkin'});
 
         AJAX('PUT', 'http://54.72.3.96:3000/techtalks/' + techTalk, 'application/json', updatedString).then(function (response) {
-            console.log('UPDATE STRING LECTOR: ', updatedString);
+            console.log('UPDATE STRING LECTOR: ', response);
             console.log('ID: ' + techTalk)
         })
         return techTalk;
