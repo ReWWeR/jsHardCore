@@ -5,7 +5,7 @@ function AJAX(type, url, contentType, sendData) {
         xhr.open(type, url);
 
         xhr.onload = function () {
-            if (xhr.status == 200) {
+            if (xhr.readyState == 4 && xhr.status == 200) {
                 resolve(xhr.response);
             } else {
                 reject(Error(xhr.statusText));
