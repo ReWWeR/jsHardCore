@@ -98,7 +98,7 @@ AJAX('GET', 'http://54.72.3.96:3000/techtalks').then(function (data) {
     techTalks = sortJSON(techTalks, 'title');
 
     for (var i = 0; i < techTalks.length - 1; i++) {
-        if (techTalks[i].title != techTalks[i + 1].title && techTalks[i].title != 'undefined') {
+        if (techTalks[i].title != techTalks[i + 1].title && techTalks[i].lector != 'undefined') {
             resultTechTalks.push(techTalks[i]);
         }
     }
