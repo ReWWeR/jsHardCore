@@ -57,7 +57,6 @@ AJAX('POST', 'http://54.72.3.96:3000/techtalks', 'application/json', jsonRecord)
     .then(function (techTalk) {
         AJAX('GET', 'http://54.72.3.96:3000/techtalks/' + techTalk).then(function (response) {
             console.log('READ: ', response);
-            console.log('ID: ' + techTalk)
         })
         return techTalk;
     })
@@ -100,7 +99,7 @@ AJAX('GET', 'http://54.72.3.96:3000/techtalks').then(function (data) {
     }
 
     resultTechTalks.forEach(function (item) {
-        AJAX('GET', 'http://54.72.3.96:3000/attendees/' + item.lector).then(function (response) {
+        AJAX('GET', 'http://54.72.3.96:3000/attendees/' + item.lector).all(function (response) {
             var lectorCard = JSON.parse(response);
             tableRows += "<tr><td><strong>" + item.title + "</strong></td><td>"
                 + item.lector + "</td>"
