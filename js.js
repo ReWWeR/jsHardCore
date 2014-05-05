@@ -49,7 +49,7 @@ var jsonRecord = JSON.stringify(record);
 
 //CHAINING OF REQUESTS TO JSON
 
-AJAX ('POST', 'http://54.72.3.96:3000/techtalks', 'application/json', jsonRecord)
+/*AJAX ('POST', 'http://54.72.3.96:3000/techtalks', 'application/json', jsonRecord)
  .then(function(response){
  var lastRecord = JSON.parse(response);
  console.log('ADD NEW RECORD...');
@@ -73,11 +73,11 @@ AJAX ('POST', 'http://54.72.3.96:3000/techtalks', 'application/json', jsonRecord
  return techTalk;
  })
  .then(function(techtalk){
- AJAX('DELETE', 'http://54.72.3.96:3000/techtalks/' + techTalk,'application/json');
+ AJAX('DELETE', 'http://54.72.3.96:3000/techtalks/' + techTalk);
  console.log ('DELETE: ', techtalk);
  console.log('ID: ' + techTalk);
  return techTalk;
- })
+ })*/
 
 //CREATING LIST OF LECTORS
 
