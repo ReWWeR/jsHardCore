@@ -49,36 +49,35 @@ var jsonRecord = JSON.stringify(record);
 
 //CHAINING OF REQUESTS TO JSON
 
-AJAX('POST', 'http://54.72.3.96:3000/techtalks', 'application/json', jsonRecord)
-    .then(function (response) {
-        var lastRecord = JSON.parse(response);
-        console.log('ADD NEW RECORD...');
-        console.log('ID: ' + lastRecord['_id']);
-        return lastRecord['_id'];
-    })
-    .then(function (techTalk) {
-        AJAX('GET', 'http://54.72.3.96:3000/techtalks/' + techTalk).then(function (response) {
-            console.log('READ: ', response);
-            console.log('ID: ' + techTalk)
-        })
-        return techTalk;
-    })
-    .then(function (techTalk) {
-        var updatedString = JSON.stringify({'lector': 'vasily_pupkin'});
-        lastRecord.lector = 'vasily_pupkin';
-        console.log(lastRecord);
-        AJAX('PUT', 'http://54.72.3.96:3000/techtalks/' + techTalk, JSON.stringify(lastRecord)).then(function (response) {
-            console.log('UPDATE STRING LECTOR: ', updatedString);
-            console.log('ID: ' + techTalk)
-        })
-        return techTalk;
-    })
-    .then(function (techtalk) {
-        AJAX('DELETE', 'http://54.72.3.96:3000/techtalks/' + techTalk);
-        console.log('DELETE: ', techtalk);
-        console.log('ID: ' + techTalk);
-        return techTalk;
-    })
+/*AJAX ('POST', 'http://54.72.3.96:3000/techtalks', 'application/json', jsonRecord)
+ .then(function(response){
+ var lastRecord = JSON.parse(response);
+ console.log('ADD NEW RECORD...');
+ console.log('ID: ' + lastRecord['_id']);
+ return lastRecord['_id'];
+ })
+ .then(function(techTalk){
+ AJAX('GET', 'http://54.72.3.96:3000/techtalks/' + techTalk).then(function(response){
+ console.log('READ: ', response);
+ console.log('ID: ' + techTalk)
+ })
+ return techTalk;
+ })
+ .then(function(techTalk){
+ var updatedString = JSON.stringify({'lector':'vasily_pupkin'});
+
+ AJAX('PUT', 'http://54.72.3.96:3000/techtalks/' + techTalk, 'application/json', updatedString).then(function(response){
+ console.log('UPDATE STRING LECTOR: ', updatedString);
+ console.log('ID: ' + techTalk)
+ })
+ return techTalk;
+ })
+ .then(function(techtalk){
+ AJAX('DELETE', 'http://54.72.3.96:3000/techtalks/' + techTalk);
+ console.log ('DELETE: ', techtalk);
+ console.log('ID: ' + techTalk);
+ return techTalk;
+ })*/
 
 //CREATING LIST OF LECTORS
 
