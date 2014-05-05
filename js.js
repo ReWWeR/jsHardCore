@@ -103,6 +103,8 @@ AJAX('GET', 'http://54.72.3.96:3000/techtalks').then(function (data) {
         }
     }
 
+    console.log(resultTechTalks);
+
     resultTechTalks.forEach(function (item) {
         AJAX('GET', 'http://54.72.3.96:3000/attendees/' + item.lector).then(function (response) {
             var lectorCard = JSON.parse(response);
